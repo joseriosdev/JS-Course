@@ -1,9 +1,10 @@
-// var name = 'Pepito Smith';
-// alert('Hello ' + name);
-// var age = prompt('What is your age?');
+var name = 'Pepito Smith';
+alert('Hello ' + name);
 
-// var x = 5;
-// var y = 10;
-// var z = x + y;
+var age = prompt('What is your age?');
+document.write(age);
 
-// console.log(z);
+var x = 5;
+var y = 10;
+var z = x + y;
+console.log(z);

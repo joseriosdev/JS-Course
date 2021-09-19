@@ -72,7 +72,7 @@ console.log(typeof val3); */
 
 // <<<<<<<< BigInt >>>>>>>>
 // Another confusing data type, don't worry about it, first 5 are the most used
-/* var val = 1n;
+var val = 1n;
 var val2 = BigInt(1);
 var val3 = BigInt("0x1fffffffffffff");
 
@@ -83,4 +83,4 @@ console.log(val2);
 console.log(typeof val2);
 console.log('____');
 console.log(val3);
-console.log(typeof val3); */
+console.log(typeof val3);
