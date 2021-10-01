@@ -32,8 +32,8 @@ var str = '8';
 console.log(num == str); // true
 console.log(num === str); // false
 
-var up = 'T';
-var low = 't';
+var up = '';
+var low = false;
 console.log(up == low); // true
 console.log(up === low); // false
 // For not equal is !==
