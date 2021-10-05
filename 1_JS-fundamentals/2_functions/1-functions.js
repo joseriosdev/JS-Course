@@ -31,9 +31,7 @@ sayHola(); // 'Hola Erick, good afternoon!'
 
 
 
-
-
-// Functions allows you to return a value, for instance:
+// Functions allows you to return a value:
 function onePlusTwo() {
 	var one = 1;
 	var two = 2;
@@ -41,7 +39,7 @@ function onePlusTwo() {
 	return returnValue;
 }
 // Using prev function
-var three = onePlusTwo();
+var three = onePlusTwo(); // 3
 
 
 // Yeap, you can also add arguments or parameters to it
@@ -56,7 +54,7 @@ console.log(sum(5, 20)); // 25
 /*
 So far we've seen that you need to do 2 basic steps to work with a Function
 	1. Create the Function
-	2. Call the Function, meanind execute the Function
+	2. Call the Function, execute the Function
 well... you can avoid the second step with an IIFE
 stands for:
 	Immediately Invoked Function Expression
@@ -82,9 +80,8 @@ var greetingDaniel = greeting('Daniel Willis');
 
 
 
-
-// JS has changed over the years, the lastest version is known as ES6
-// A lot of things happened with ES6, just know that there is an additional way of declaring a Function
+// JS has changed over the years, the major version that did a lot of changes is known as ES6
+// just know that there is an additional way of declaring a Function (Arrow functions)
 // here's the syntax
 var greeting2 = (fullName = 'John Doe') => {
 	var greet = `Hello ${fullName} :)`;
