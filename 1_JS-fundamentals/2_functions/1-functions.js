@@ -89,3 +89,46 @@ var greeting2 = (fullName = 'John Doe') => {
 	return greet;
 };
 var greetingAnonymus = greeting2();
+
+// If the arrow function only has one parameter and returns something inmediatly, you can write:
+var myArrowFuncion = singleParameter => `Let's return a string with the ${singleParameter}` // in JS the ";" is optional
+// This is the same as:
+function myRegularFunction(oneArgument) {
+	return `Let's return a string with the ${oneArgument}`;
+}
+
+// IMPORTANT NOTE:
+// Use the "return" keyword to stop a function in any time, for example:
+function stopper() {
+	console.log('Some function here'); // this will be printed
+	return; // this return will stop everything, useful when you learn to use "If"
+	console.log('Some other function'); // this won't be printed
+}
+
+
+// Have you wondered if can you pass parameters to a function wihtout params?
+function noArgumentsOrParameters() {
+	console.log('!¡');
+}
+// What do you think about this?
+noArgumentsOrParameters('Text', 5, null); // is this possible?
+
+// Well it is!
+// but, where can I see those arguments?
+// JS covers that for you. You need to call a 'secret array variable' (arguments)
+// just like this
+function func1(a, b, c) {
+  console.log(arguments[0]);
+  // expected output: 1
+
+  console.log(arguments[1]);
+  // expected output: 2
+
+  console.log(arguments[2]);
+  // expected output: 3
+
+  console.log(arguments);
+  // expected output: Array (5)
+}
+
+func1(1, 2, 3, 4, null);

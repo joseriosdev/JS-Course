@@ -2,7 +2,7 @@
 - **Here's the Movie Info:**
     - Title
     - Year
-    - Genre *(considering a movie has only one genre)*
+    - Genre (considering a movie has only one genre)
     - Description
 
 
