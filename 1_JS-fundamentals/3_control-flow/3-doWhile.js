@@ -68,7 +68,7 @@ var bitesAmount = parseInt(prompt('How many bites to eat a burger?'));
 		console.log('swallowing...')
 		bites--;
 		count++;
-	} 
+	}
 
 	console.log('Finish!');
 })(bitesAmount)

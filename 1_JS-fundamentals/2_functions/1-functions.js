@@ -72,7 +72,7 @@ var greeting = function(fullName = 'John Doe') {
 	var greet = `Hello ${fullName} :)`;
 	console.log(greet);
 	return greet;
-};
+}
 // Let's combine everything!
 var greetingDaniel = greeting('Daniel Willis');
 // will do the console log and also will assign 'Hello Daniel Willis :)' to the var greetingDaniel
@@ -87,7 +87,7 @@ var greeting2 = (fullName = 'John Doe') => {
 	var greet = `Hello ${fullName} :)`;
 	console.log(greet);
 	return greet;
-};
+}
 var greetingAnonymus = greeting2();
 
 // If the arrow function only has one parameter and returns something inmediatly, you can write:
