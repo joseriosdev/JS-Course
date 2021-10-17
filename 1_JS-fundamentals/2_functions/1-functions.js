@@ -50,23 +50,6 @@ console.log(sum(5, 20)); // 25
 
 
 
-
-/*
-So far we've seen that you need to do 2 basic steps to work with a Function
-	1. Create the Function
-	2. Call the Function, execute the Function
-well... you can avoid the second step with an IIFE
-stands for:
-	Immediately Invoked Function Expression
-here's an example
-*/
-(function() {
-	console.log('I am an IIFE with the default argument of ' + param);
-})(param = 100)
-
-
-
-
 // You can also declare a variable with a function
 var greeting = function(fullName = 'John Doe') {
 	var greet = `Hello ${fullName} :)`;
@@ -97,7 +80,31 @@ function myRegularFunction(oneArgument) {
 	return `Let's return a string with the ${oneArgument}`;
 }
 
-// IMPORTANT NOTE:
+
+
+/*
+So far we've seen that you need to do 2 basic steps to work with a Function
+	1. Create the Function
+	2. Call the Function, execute the Function
+well... you can avoid the second step with an IIFE
+stands for:
+	Immediately Invoked Function Expression
+here's an example
+*/
+(function() {
+	console.log('I am an IIFE with the default argument of ' + param);
+})(param = 100)
+/***************
+ *  NOTE:
+ * There are no need to use this for now
+ * Later I'll explain a common use case for this particular function
+ * Is in the Pattern Module which is an advanced topic
+ * *********/
+
+
+
+
+// ---> IMPORTANT NOTE: <---
 // Use the "return" keyword to stop a function in any time, for example:
 function stopper() {
 	console.log('Some function here'); // this will be printed
