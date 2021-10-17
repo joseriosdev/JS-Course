@@ -1,3 +1,11 @@
+/*
+Run this in your browser:
+* in the upper search bar, type "about:blank"
+* then f12 to inspect
+* locate "console"
+* copy and paste
+*/
+
 var name = 'Pepito Smith';
 alert('Hello ' + name);
 
