@@ -1,10 +1,12 @@
 
-// <<<<<<< Use of Aritmetic operations and mod >>>>>>>>
+// <<<<<<< Use of Arithmetic operations and mod >>>>>>>>
 var sum = 5 + 6;
 var rest = 2 - 9;
 var multiplication = 1 * 10;
 var division = 50 / 5;
 var mod = 11 % 5;
+// Exponentiation operator (pow)
+var pow = 4 ** 2; // 16
 
 // Understanding the priority for previous operations
 var priority = 5 + 6 * 2;
