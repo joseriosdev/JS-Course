@@ -29,11 +29,8 @@ try is saying, hey! app, please try to do the following code block
 but
 if it fails
 catch that and do next block of code
-*/
-
-/*
-Just want to mention that things like if, else, if else, switch, all of them can be used for error handling
-but 
+...
+until FINALLY
 */
 
 
@@ -50,10 +47,40 @@ Those are tools generally used for handling errors and avoid the total crash of 
 // Exception
 /*
 Is an event which occurs during the execution of a program,
-that disrupts the normal flow of the program's instructions
+that disrupts the normal flow of the program's instructions, when that happens you can 
+THROW an Exception meaning a custom error message
 */
+throw 'Error2';   // String type
+throw 42;         // Number type
+throw true;       // Boolean type
+throw {toString: function() { return "I'm an object!"; } };
 
-// Let's see an example.
-// let's say that you want to console.log an unexisting variable
+// Or you can have your own object exception, here's the example but later we get to see Objects in detail
+function PersonException(msn) {
+	this.message = msn;
+	this.name = 'Person Name';
+	this.anyOtherProperty = true;
+}
+throw new PersonException('Not legal');
 
-// so, let's 
+// Example of an error handling when someone wants to use a month number outside range (1-12)
+function getMonthName(num) {
+	var month = num - 1;
+	var months = [
+		'January', 'February', 'March',
+		'April', 'May', 'June',
+		'July', 'Agust', 'September',
+		'October', 'November', 'December'
+	];
+
+	try {
+		if (month > 0 && month < 13)
+			console.log(months[month]);
+		else
+			throw 'Outside month range (1-12)'
+	} catch(err) {
+		console.log(err);
+	} finally {
+		console.log('work finished!');
+	}
+}

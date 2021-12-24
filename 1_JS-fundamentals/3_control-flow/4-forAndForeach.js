@@ -83,3 +83,17 @@ for(var key in obj) {
 	console.log(key); // prints the key
 	console.log(obj[key]); // prints the value from the key
 }
+
+
+// ----------------- EXERCISE
+/*
+you got next array [1,4,9,2,4,1,0,4,8]
+using any for, do a program than can sum all the numbers of the given array
+*/
+
+var arr = [1,4,9,2,4,1,0,4,8];
+var result = 0;
+for (var i = 0; i < arr.length; i++) {
+	result += arr[i];
+}
+console.log(result);

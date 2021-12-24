@@ -54,7 +54,7 @@ Boolean(!false);
 
 
 // >>>>>>>>>>>> THE MATH OBJ <<<<<<<<<<<<<<
-// Helps while dealing with number, let's see some examples
+// Helps dealing with number, let's see some examples
 // Rounding decimal to a integer
 Math.round(5.6); // 6
 Math.round(5.4); // 5

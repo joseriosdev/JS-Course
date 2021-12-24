@@ -1,8 +1,8 @@
 // <<<<<<< Arrays >>>>>>>>
 // Basic declaration, accessing through index and the length property
-var myStrArray = ['Dogs','Are','Cool'];
-var emptyArray1 = [];
-var emptyArray2 = new Array();
+var myStrArray = ['Dogs','Are','Cooler']; // array with 3 string elements
+var emptyArray1 = []; // empty array
+var emptyArray2 = new Array(); // array with in-build contructor, more info later
 
 console.log(myStrArray);
 console.log(myStrArray[1]);
@@ -16,7 +16,7 @@ console.log(myStrArray[myStrArray.length]);
 myStrArray[myStrArray.length] = 'Than Cats';
 console.log(myStrArray);
 
-// Use 4 array methods to change the array value
+// Use 4 array methods to change the array value or elements
 myStrArray.pop(); // delete last
 console.log(myStrArray);
 myStrArray.push('I\'m last'); // add last
@@ -46,20 +46,19 @@ console.log(myObj);
 
 // Can also be like a JSON format
 myObj = {
-	'name': 'Jose',
-	'age': 24,
-	'developer': true
+	"name": "Daniel",
+	"age": 25,
+	"developer": true
 };
 console.log(myObj);
 
 // Access the key any of these 2 ways
 console.log(myObj.name);
 console.log(myObj['age']);
-console.log(myObj.developer);
 
 // Objects don't have the .length property BUT you can still access the value .length property if is a String or Array
 console.log(myObj.length); //undefined
-console.log(myObj.name.length); // 4 -> [J, o, s, e]
+console.log(myObj.name.length); // 6 -> [D, a, n, i, e, l]
 
 // Check if a value exist with .hasOwnProperty
 console.log(myObj.hasOwnProperty('name')) // true

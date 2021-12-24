@@ -82,5 +82,21 @@ Write an app that finds the age range of a person, according to the next info:
 	- age above 120 -> superhuman
 */
 
-alert('Welcome! This app will tell you your age range')
-var userAge = prompt('What is your age?');
+var age = Number.parseInt(prompt('What is your age?'));
+
+if (age < 0)
+	alert('That is not a real age');
+else if (age <= 5)
+	alert('BABY!');
+else if (age <= 13)
+	alert('KID!');
+else if (age <= 19)
+	alert('TEENAGER!');
+else if (age <= 33)
+	alert('YOUNG ADULT!');
+else if (age <= 60)
+	alert('ADULT');
+else if (age <= 120)
+	alert('OLD!');
+else
+	alert('SUPERHUMAN!!');

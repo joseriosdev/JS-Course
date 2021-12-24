@@ -1,10 +1,14 @@
 /*
 Functions are chunks of code that will do something for you
 this is helpful because avoids repeating the same lines of code for certain functionality in your app
-let's see them
+We got:
+* Immediately Invoked Function Expression
+* Function Declaration
+* Function Expression
+* Arrow functions
 */
 
-
+// --------------- FUNCTION DECLARATION
 // Creating a function with the name 'sayHello' than will console log 'Hello!'
 function sayHello() {
 	console.log('Hello!');
@@ -49,7 +53,7 @@ function sum(a , b) {
 console.log(sum(5, 20)); // 25
 
 
-
+// --------------- FUNCTION EXPRESSION
 // You can also declare a variable with a function
 var greeting = function(fullName = 'John Doe') {
 	var greet = `Hello ${fullName} :)`;
@@ -62,7 +66,7 @@ var greetingDaniel = greeting('Daniel Willis');
 // Take your time to understand everything that is going on
 
 
-
+// --------------- ARROW FUNCTIONS
 // JS has changed over the years, the major version that did a lot of changes is known as ES6
 // just know that there is an additional way of declaring a Function (Arrow functions)
 // here's the syntax
@@ -82,7 +86,7 @@ function myRegularFunction(oneArgument) {
 
 
 
-/*
+/* --------------- IMMEDIATELY INVOKED FUNCTION EXPRESSION
 So far we've seen that you need to do 2 basic steps to work with a Function
 	1. Create the Function
 	2. Call the Function, execute the Function

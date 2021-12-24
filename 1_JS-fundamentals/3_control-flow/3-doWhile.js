@@ -27,7 +27,7 @@ while(true /*Put a any logical expression here*/) {
 // but wait! when this should stop then?
 // Let's supose that when a person has ate 10 potatos is full, so we need to add count var
 var count = 1;
-while(count <= 10) { // while count is less of equal to ten, do:
+while(count <= 10) { // while count is less or equal to ten, do:
 	console.log(`I am eating ${count} potato`);
 	count++; // this will increment count + 1
 }
@@ -60,7 +60,7 @@ var bitesAmount = parseInt(prompt('How many bites to eat a burger?'));
 // remember the IIFE?
 (function(bites) {
 	console.log('Let\'s eat a burger!');
-	console.log('I took the burger');
+	console.log('I grab the burger');
 	var count = 1;
 
 	while(bites > 0) {
@@ -95,3 +95,19 @@ each line formatted as follow:
 using DO WHILE...
 Do the same as above, but changing the aritmetic operation for sum
 */
+
+function multiplicationTable(n) {
+	var count = 1;
+	while (count <= 10) {
+		console.log(`${count}x${n} = ${count * n}`);
+		count++;
+	}
+}
+
+function sumTable(n) {
+	var count = 0;
+	do {
+		count++;
+		console.log(`${count}+${n} = ${count + n}`);
+	} while (count < 10)
+}

@@ -27,13 +27,13 @@ notEqual = negative != negative; // false
 
 
 // Understanding the ===
+/*
+Here's when it comes in handy to know about primitive data types, because the ===
+what it actually does is to compare the value of the variables including its data type
+*/
 var num = 8;
 var str = '8';
 console.log(num == str); // true
 console.log(num === str); // false
 
-var up = '';
-var low = false;
-console.log(up == low); // true
-console.log(up === low); // false
-// For not equal is !==
+// For not equal is: !==

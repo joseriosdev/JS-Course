@@ -33,7 +33,7 @@ switch(language) {
 		console.log('Oi cara!');
 		break;
 	default:
-		console.log('Hello friend!');  // this will be loged and no need to put break, since is the default
+		console.log('Hello friend!');  // this will be logged and no need to put break, since is the default
 }
 // THAT'S ALL YOU NEED TO KNOW
 
@@ -68,3 +68,27 @@ switch(meat) {
 // write a function sendEmail()
 // When cheking the student's note (A, B, C, D, E, F), the app will be able to 'send' the proper email to the student
 
+function sendEmail(note) {
+	switch (note) {
+		case 'A':
+			console.log('Excellent');
+			break;
+		case 'B':
+			console.log('Nice');
+			break;
+		case 'C':
+			console.log('Not bad');
+			break;
+		case 'D':
+			console.log('You can improve a lot');
+			break;
+		case 'E':
+			console.log('Be aware');
+			break;
+		case 'F':
+			console.log('You are almost out of here');
+			break;
+		default:
+			console.log('Wrong note');
+	}
+}

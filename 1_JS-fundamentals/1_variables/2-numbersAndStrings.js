@@ -1,4 +1,3 @@
-
 // <<<<<<< Use of Arithmetic operations and mod >>>>>>>>
 var sum = 5 + 6;
 var rest = 2 - 9;
