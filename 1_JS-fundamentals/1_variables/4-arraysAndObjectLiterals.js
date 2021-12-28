@@ -72,3 +72,12 @@ console.log(myObj.hasOwnProperty('lastName')) // true
 console.log(myObj);
 delete myObj.lastName;
 console.log(myObj);
+
+// Get the keys
+console.log(Object.keys(myObj)); // ['name', 'age', 'developer']
+
+// Get the values
+console.log(Object.values(myObj)); // ['Daniel', 25, true]
+
+// Get both, keys and values
+console.log(Object.entries(myObj)); // [['name','Daniel'], ['age',25], ['developer', true]]
