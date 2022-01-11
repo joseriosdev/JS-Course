@@ -1,3 +1,4 @@
+// transform this code to be ES6
 function Product(name, price, stock) {
 	this.name = name;
 	this.price = price;
