@@ -72,7 +72,7 @@ firstWhitePawn.isAliveYet = true;
 
 Above code can be fixed, because is obvious to say that piceType is a 'pawn' and that is 'true' that is still alive since the game just started, for that we have a constructor.
 
-### Contructor
+### Constructor
 The constructor is executed everytime an object is instantiated, so for your blueprint or class you can specify which property can be requested when the object is created. Let's re-do what we've been talking about but with JavaScript code with ES6.
 
 **Creating the ChessPiece class**
@@ -181,10 +181,12 @@ class Bishop extends ChessPiece {
 
 ## Polymorphism
 Describe methods that are able to take on many form, methods and not classes. There are two types of them:
-	* **Dynamic Polymorphism -** occurs during runtime of the program, describes when a method is both a subclass and superclass
+
+	- **Dynamic Polymorphism -** occurs during runtime of the program, describes when a method is both a subclass and superclass
 		* Shares the same methods but have different implementation
 		* The implementation of the subclass that the object is an instance of overrides the superclass method
-	* **Static Polymorphism -** occurs during complie-time. It refers when *__methods with the same name but different arguments__* are defined in the same class, this is called **method overloading**
+
+	- **Static Polymorphism -** occurs during complie-time. It refers when *__methods with the same name but different arguments__* are defined in the same class, this is called **method overloading**
 
 ```javascript
 // Let's set up an Animal and Dog classes
