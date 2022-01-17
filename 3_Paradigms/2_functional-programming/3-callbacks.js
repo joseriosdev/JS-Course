@@ -6,7 +6,7 @@ we have already been using them, here's a recall
 var ar = ['tiger','and','wax','monkey','show'];
 console.log(ar.filter(function(word) {
 	return word.length > 3;
-});
+}));
 
 /*
 A callback function is a function that is passed as an argument to another function,

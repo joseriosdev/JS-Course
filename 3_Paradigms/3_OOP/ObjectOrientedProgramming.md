@@ -4,11 +4,11 @@
 Is the short for Object Oriented Programming, which is a programming paradigm created in the lates '90. What OOP does is to allows us to build large applications using objects, those objects can be anything.
 
 When talking about objects we are talking properties and methods that are packed into a single object.
-	* **Property -** means a characteristic of the object that can be read or even change
-	* **Methods -** means what functions can be executed using the object or one of its instance
+- __Property -__ means a characteristic of the object that can be read or even change
+- __Methods -__ means what functions can be executed using the object or one of its instance
 
 ## Example
-Let's say that we want to build a chess game, each piece will have certain **properties** like `color`, `position`, `pieceType`, `isAliveYet` and certain **methods** like `move()` or `capture()`, so we can say that we have an **object*** name `ChessPiece` BUT we have different categories of pieces, for example pawns and bishops, both of them behave completly different however both have the same **properties and methods**. So far what we got will look like this:
+Let's say that we want to build a chess game, each piece will have certain **properties** like `color`, `position`, `pieceType`, `isAliveYet` and certain **methods** like `move()` or `capture()`, so we can say that we have an **object** name `ChessPiece` BUT we have different categories of pieces, for example pawns and bishops, both of them behave completly different however both have the same **properties and methods**. So far what we got will look like this:
 
 ```bash
 Object ChessPiece 
@@ -130,11 +130,11 @@ for (var i = 1; i <= 8; i++) {
 There are 4 core concepts to understand OOP, keep in mind that these paradigm was created with strongly typed language like C or C#, so it's far better to understand these concepts with any of those languages, however I'm putting here a brief explanation of what each one means or the main idea behind it.
 
 ## Encapsulation
-The mere act of use bundles or packages, meaning, objects are just like that a package that other object can take a look at and sometimes even change its properties, here we got the concept of getters and setters, ways to get info or set info in the object, in other languages you can say which property has a public or private access to it
+The mere act of use bundles or packages, meaning, objects are a package and other object can take a look inside of it and change its properties when allowed, here we got the concept of getters and setters, ways to get info or set info in the object, in other languages you can say which property has a public or private access to it
 
 ```javascript
-class Person {
-	constructor(name = 'Robbie') {
+class PersonRobbie {
+	constructor() {
 		this.name = 'Robbie';
 	}
 
@@ -154,15 +154,15 @@ class Person {
 ## Abstraction
 When you use a car, you care about how to use the steerwheel, or the pedals and know how much gas do you have available, that's the basic info a normal driver needs to know, but what a regular driver doesn't need to know is how exactly the car works on the inside, that's irrelevant for many drivers.
 
-That's the same approach for this concept that classes YOU write should abstract all it's logic from your regular users. For example, JS abstract the use of `window.alert('Hi');` so we do not worry about what the heck JS does to display an alert message, is the same idea.
+That's the same approach for this concept that classes YOU write should abstract all it's logic from your regular users. For example, JS abstract the use of `window.alert('Hi');` so we do not worry about what the heck JS does to display an alert message on the browser... is the same idea.
 
-Here is when comes in handy to a language like C# because have keywords like `interface` or `abstract`.
+Here is when comes in handy to know a language like C# because have keywords like `interface` or `abstract`.
 
 ## Inheritance
 Classes can inherit methods and properties from another class. That simple. For example, we got the class `ChessPiece` and also the class `Bishop`, which inheriting from who? yep, `Bishop` class is inheriting from `ChessPiece`. In this case, `ChessPiece` will be a parent class or super class, and `Bishop` a child class or subclass.
 
 ```javascript
-// Super-class
+// Superclass
 class ChessPiece {
 	constructor(color, position) {
 		this.color = color;
@@ -170,10 +170,10 @@ class ChessPiece {
 	}
 }
 
-// Sub-class
+// Subclass
 class Bishop extends ChessPiece {
 	constructor(color, position, colorMotion) {
-		super(color, position); // calling the Super-class constructor
+		super(color, position); // calling the Superclass constructor
 		this.colorMotion = colorMotion;
 	}
 }
@@ -182,11 +182,11 @@ class Bishop extends ChessPiece {
 ## Polymorphism
 Describe methods that are able to take on many form, methods and not classes. There are two types of them:
 
-	- **Dynamic Polymorphism -** occurs during runtime of the program, describes when a method is both a subclass and superclass
-		* Shares the same methods but have different implementation
-		* The implementation of the subclass that the object is an instance of overrides the superclass method
+- **Dynamic Polymorphism -** occurs during runtime of the program, describes when a method is both a subclass and superclass
+	* Shares the same methods but have different implementation
+	* The implementation of the subclass that the object is an instance of overrides the superclass method
 
-	- **Static Polymorphism -** occurs during complie-time. It refers when *__methods with the same name but different arguments__* are defined in the same class, this is called **method overloading**
+- **Static Polymorphism -** occurs during complie-time. It refers when **_methods with the same name but different arguments_** are defined in the same class, this is called **method overloading**
 
 ```javascript
 // Let's set up an Animal and Dog classes
@@ -215,4 +215,4 @@ dog.makeNoise();    // Woof woof- this was overridden
 dog.legs;           // 4! This was inherited
 ```
 ---
-I tried to cover a lot of ground here, that's it for now.
+That's the bsic info you need to know about OOP. From this concepts derives other concepts like programming patterns and SOLID principles.

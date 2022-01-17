@@ -11,8 +11,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 1- MAP
 Creates a new array populated with the results of calling a provided function on every element in the calling array.
 */
-let arr = [1,2,3,4,5];
-let arrMap = arr.map(function(i) {
+var arr = [1,2,3,4,5];
+var arrMap = arr.map(function(i) {
 	return i + 10; // this anonymous function can be replaced by arrow function
 });
 console.log(arrMap); // 11, 12, 13, 14, 15
@@ -21,7 +21,7 @@ console.log(arrMap); // 11, 12, 13, 14, 15
 2- FILTER
 Creates a new array with all elements that pass the test implemented by the provided function
 */
-let arrFilter = arr.filter(num => num > 3);
+var arrFilter = arr.filter(num => num > 3);
 console.log(arrFilter); // 4, 5
 
 /*

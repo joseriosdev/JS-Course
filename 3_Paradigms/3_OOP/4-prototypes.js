@@ -1,7 +1,7 @@
 /*
 Almost Everything in JavaScript is prototypes!!
 
-Were other languages that supports OOP uses 'classes', JS uses 'prototypes'.
+Where other languages that supports OOP uses 'classes', JS uses 'prototypes'.
 The main difference between these two:
 	* class define type which can be instantiated at runtime
 	* prototype is itself an object instance

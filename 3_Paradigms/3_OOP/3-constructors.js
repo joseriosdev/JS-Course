@@ -1,6 +1,6 @@
 /*
-A constructor is the initial data needed to create an object
-on your object you receive an input that will transform into object properties
+A constructor is a function that runs everytime an object is created with the 'new' keyword
+is the initial data and logic needed to create an object
 */
 
 function Movie(inputMovieTitle) {
@@ -45,7 +45,7 @@ var bob = new Person('Bob', 'Sullivan', 25, 'male');
 
 /*
 Quick mention about 'Constructor Overload' that is something that JavaScript doesn't support.
-Other languages like C# has it and is basically the option of haven multiple contructors for one object.
+Other languages like C# has it and is basically the option of having multiple contructors for one object.
 
 for example the object car can be instantiated with only [name] or [name, year] or [name, year, brand]
 in that example, you might have 3 constructors in one single object.
