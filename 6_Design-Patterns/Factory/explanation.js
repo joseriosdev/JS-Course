@@ -1,6 +1,0 @@
-/*
-* Is a Creational pattern
-
-
-
-*/
