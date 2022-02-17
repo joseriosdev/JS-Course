@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Traversing the DOM</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			padding: 1rem;
+			margin:  0 auto;
+			max-width: 800px;
+			background-color: #eee;
+		}
+
+		div {
+			display: flex;
+			margin: 1rem;
+			padding: 2rem 1rem;
+			border: solid 2px black;
+			flex-grow: 1;
+		}
+
+		#grandParent {
+			flex-direction: column;
+			background-color: firebrick;
+		}
+
+		.parent {
+			background-color: forestgreen;
+		}
+
+		.child {
+			background-color: steelblue;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="grandParent" name="grandpa">
+		<div class="parent">
+			<div class="child"></div>
+			<div class="child"></div>
+		</div>
+		<div class="parent">
+			<div class="child"></div>
+			<div class="child"></div>
+		</div>
+	</div>
+	
+	<!-- <script type="text/javascript" src="./1-selectingElements.js"></script> -->
+	<!-- <script type="text/javascript" src="./2-manipulatingElements.js"></script> -->
+	<!-- <script type="text/javascript" src="./3-recap.js"></script> -->
+</body>
+</html>
