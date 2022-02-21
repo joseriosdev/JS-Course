@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basic Creation</title>
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
+	<style type="text/css">
+		h4 {
+			color: indianred;
+		}
+		main {
+			display: flex;
+			justify-content: space-evenly;
+		}
+	</style>
+</head>
+<body class="p-2">
+	<h4>Web Components</h4>
+
+
+	<!-- Here is a custom tag -->
+	<main>
+		<user-card name="Jon Snow" email="kinginthenorth@crow.bastard" avatar="https://pbs.twimg.com/profile_images/613894506480439296/MGWBzW3B_400x400.jpg"></user-card>
+		<user-card name="Danny Targaryen" email="motherofdragons@drogon.kalesi" avatar="https://a.wattpad.com/useravatar/Daenerys_khal.256.582456.jpg"></user-card>
+	</main>
+
+
+
+
+	<!-- ********** JAVASCRIPT CODE ********** -->
+	<script type="text/javascript">
+		const template = document.createElement('template');
+		template.innerHTML = `
+			<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
+			<style>
+				h4 {
+					padding-bottom: .4rem;
+					color: navy;
+					border-bottom: solid 2px blue;
+				}
+			</style>
+			<div class="card shadow" style="width: 18rem;">
+				<img src="" class="card-img-top" alt="avatar" width="18">
+				<div class="card-body">
+					<h4 class="card-title"></h4>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		`;
+
+		// needs to extend from HTMLElement
+		class UserCard extends HTMLElement {
+			constructor() {
+				super();
+
+				// The shadow DOM allows encapsulation
+				this.attachShadow({ mode:'open' });
+				this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+				// from now on we interact with the cmp only with the shadow dom
+				this.shadowRoot.querySelector('h4').innerText = this.getAttribute('name');
+				this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
+			}
+		}
+
+		// This will create the custom HTML tag
+		window.customElements.define('user-card', UserCard);
+	</script>
+</body>
+</html>

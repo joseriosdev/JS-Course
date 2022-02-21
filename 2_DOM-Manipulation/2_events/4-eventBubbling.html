@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bubbles</title>
+	<style type="text/css">
+		div {
+			margin: 0 auto;
+			padding:  3rem;
+			width: 50%;
+			font-family: arial;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: whitesmoke;
+			border: solid 2px silver;
+		}
+
+		.grandparent {
+			background-color: indianred;
+		}
+
+		.parent {
+			background-color: slateblue;
+		} 
+
+		.child {
+			background-color: darkkhaki;
+		}
+	</style>
+</head>
+<body>
+	<h6>'events.md' talks about event bubbling</h6>
+	<div class="grandparent">
+		grandparent
+		<div class="parent">
+			parent
+			<div class="child">
+				child
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		// Get all elements in a set and also individually
+		const divs = document.querySelectorAll('div');
+		const child = document.querySelector('.child');
+		const parent = document.querySelector('.parent');
+		const grandparent = document.querySelector('.grandparent');
+
+		// Let's start simple by adding a click event to the document element
+		// no matter where you click, will fire
+		// document.addEventListener('click', e => console.log('Document click',e));
+
+		// same evt but for the child element
+		// now the event will fire when clicks the child elmt
+		// child.addEventListener('click', e => console.log('Child click',e));
+
+		// Adding the same click but to all divs
+		// this is bubbling
+		divs.forEach(div => div.addEventListener('click', (e, elmt = div) => {
+			console.log(`clicked: \n${elmt.innerText}`);
+		}));
+		// so bubbling happens under these circustances
+
+		// 
+
+
+	</script>
+</body>
+</html>

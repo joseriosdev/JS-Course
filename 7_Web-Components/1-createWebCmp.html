@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basic Creation</title>
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
+</head>
+<body class="p-5">
+	<!-- Here is a custom tag -->
+	<user-card name="Jon Snow" email="kinginthenorth@crow.bastard"></user-card>
+	<user-card name="Danny Targaryen" email="motherofdragons@drogon.kalesi"></user-card>
+
+	<!-- ********** JAVASCRIPT CODE ********** -->
+	<script type="text/javascript">
+		// needs to extend from HTMLElement
+		class UserCard extends HTMLElement {
+			constructor() {
+				super();
+				this.innerHTML = `
+					<h3>User Card</h3>
+					<div class="text-muted">
+						<p><b>Name:</b> ${this.getAttribute('name')}</p>
+						<p><b>Email:</b> ${this.getAttribute('email')}</p>
+					</div>
+				`;
+			}
+		}
+
+		// This will create the custom HTML tag
+		window.customElements.define('user-card', UserCard);
+	</script>
+</body>
+</html>

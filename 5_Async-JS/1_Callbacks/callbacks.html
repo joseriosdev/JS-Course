@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Callbacks</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body>
+  <h3>Re-creating what a server call will look like using just callbacks</h3>
+
+  <ul></ul>
+
+
+  <script type="text/javascript">
+    // Let's think that this is our DataBase
+    const posts = [
+      {title: 'Post One', body: 'This is post one'},
+      {title: 'Post Two', body: 'This is post two'}
+    ];
+
+    // the "setTimeout" will mimic the server response time
+
+    // _________________ WITH CALLBACKS (fetch the data in the right order)
+    function createPost(post, callback) {
+      setTimeout(function() {
+        posts.push(post);
+        callback();
+      }, 2000);
+    }
+
+    function getPosts() {
+      setTimeout(function() {
+        let output = '';
+        posts.forEach(function(post) {
+          output += `<li>${post.title}</li>`;
+        });
+        document.querySelector('ul').innerHTML = output;
+      }, 1000);
+    }
+
+    createPost({title: 'Post Three', body: 'This is post three'}, getPosts);
+
+
+    // ______________ WITHOUT CALLBACKS (fetch the data incorrectly)
+    // function createPost(post) {
+    //   setTimeout(function() {
+    //     posts.push(post);
+    //   }, 2000);
+    // }
+
+    // function getPosts() {
+    //   setTimeout(function() {
+    //     let output = '';
+    //     posts.forEach(function(post){
+    //       output += `<li>${post.title}</li>`;
+    //     });
+    //     document.querySelector('ul').innerHTML = output;
+    //   }, 1000);
+    // }
+
+    // createPost({title: 'Post Three', body: 'This is post three'});
+
+    // getPosts();
+  </script>
+</body>
+</html>

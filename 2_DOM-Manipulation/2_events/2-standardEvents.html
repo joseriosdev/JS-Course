@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Standard Events</title>
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
+	<base target="_blank" />
+</head>
+<body class="p-2">
+	<h1>Standard Events</h1>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/Events">Check out the full list here</a>
+
+	<ul>
+		<li><b><a href="https://www.w3schools.com/jsref/obj_mouseevent.asp">Mouse</a></b></li>
+		<li>onclick</li>
+		<li>ondblclick</li>
+		<li>onmouseout</li>
+		<li>onmouseover</li>
+		<li>onmouseleave</li>
+		<li>onmouseup</li>
+		<li>onmousedown</li>
+		<li>oncontextmenu</li>
+		<li>onmouseenter</li>
+		<li>onmousemove</li>
+		<br/>
+		<li><b><a href="https://www.w3schools.com/jsref/obj_keyboardevent.asp">Keyboard</a></b></li>
+		<li>onkeydown</li>
+		<li>onkeypress</li>
+		<li>onkeyup</li>
+	</ul>
+
+	<button class="btn btn-primary">Click me for demo</button>
+	<button class="btn btn-info" onclick="document.location.reload(true)">Stop It!</button>
+
+	<script type="text/javascript">
+		var stopBtn = document.querySelector('.btn-info');
+		var btn = document.querySelector('.btn-primary');
+
+		stopBtn.remove();
+
+		btn.addEventListener('click', (evt) => {
+			console.log(evt);
+			var myInterval = setInterval(intervalFn, 1000);
+			document.body.append(stopBtn);
+			btn.remove();
+		});
+
+		function intervalFn() {
+			var colors = [
+				'firebrick', 'red', 'green',
+				'blue', 'navy', 'grey',
+				'steelblue', 'teal', 'gold',
+				'pink', 'orange', 'purple'
+			];
+			var random = Math.floor(Math.random() * colors.length);
+			document.body.style.backgroundColor = colors[random];
+		}
+	</script>
+	</body>
+</html>
