@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<pokemonListing>
+	<pokemon>
+		<id>4</id>
+		<name>Squirtle</name>
+		<type>Water</type>
+		<power>8</power>
+	</pokemon>
+	<pokemon>
+		<id>5</id>
+		<name>Wartortle</name>
+		<type>Water</type>
+		<power>22</power>
+	</pokemon>
+	<pokemon>
+		<id>6</id>
+		<name>Ivysaur</name>
+		<type>Earth</type>
+		<power>30</power>
+	</pokemon>
+</pokemonListing>

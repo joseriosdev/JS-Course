@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AJAX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body class="container">
+	<h3 class="flow-text">Three formats: JSON, XML and TXT</h3>
+	<main class="row">
+		<section class="col s4">
+			<button class="btn">JSON</button>
+			<ul></ul>
+		</section>
+		<section class="col s4">
+			<button class="btn">XML</button>
+			<ul></ul>
+		</section>
+		<section class="col s4">
+			<button class="btn">TXT</button>
+			<ul></ul>
+		</section>
+	</main>
+
+
+
+
+	<script type="text/javascript">
+		// Static files url
+		const staticUrls = {
+			JSON: '../DataBase/jsonFormat.json',
+			XML: '../DataBase/xmlFormat.xml',
+			TXT: '../DataBase/txtFormat.txt'
+		};
+
+		// Selecting the buttons
+		const btns = document.querySelectorAll('button');
+
+		// Adding click evt
+		btns.forEach(btn => {
+			let url = staticUrls[btn.innerText];
+			btn.addEventListener('click', evt => ajaxCall(evt, url, btn.innerText));
+		})
+
+
+		function ajaxCall(evt, url, type) {
+			console.log(url)
+			// Create the xhr/ajax object 
+			const xhr = new XMLHttpRequest();
+
+			// Set the rest method, url and true or false if is or not and async call
+			xhr.open('GET', url, true);
+
+			// Whenever is a response, this callback is executed
+			xhr.onload = function() {
+				// THIS means "in the current rest call"
+				if(this.status === 200) {
+					const res = switchTypeFormat(type, this);
+					evt.target.nextElementSibling.innerHTML = res;
+				}
+			}
+
+			// Send the response
+			xhr.send();
+		}
+
+
+		function switchTypeFormat(type, xhr) {
+			let result = '';
+
+			switch (type) {
+				case 'JSON':
+					let res = JSON.parse(xhr.responseText);
+					res.forEach(obj => {
+						result += `
+							<li>NAME: ${obj.name}</li>
+							<li>TYPE: ${obj.type}</li>
+							<li>POWER: ${obj.power}</li>
+							<hr/>
+						`;
+					})
+					return result;
+				case 'XML':
+					let dom = Array.from(xhr.responseXML.getElementsByTagName('pokemon'));
+					dom.forEach(elmt => {
+						result += `
+							<li>NAME: ${elmt.getElementsByTagName('name')[0].textContent}</li>
+							<li>TYPE: ${elmt.getElementsByTagName('type')[0].textContent}</li>
+							<li>POWER: ${elmt.getElementsByTagName('power')[0].textContent}</li>
+							<hr/>
+						`;
+					});
+					return result;
+				case 'TXT':
+					return xhr.responseText;
+			}
+		}
+	</script>
+</body>
+</html>

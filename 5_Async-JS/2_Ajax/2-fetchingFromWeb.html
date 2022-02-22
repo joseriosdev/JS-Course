@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body class="container">
+    <h3>Get random joke from Chuck Norris</h3>
+    <section>
+        <button onclick="ajaxFetch()" class="btn">Fetch With AJAX</button>
+    </section>
+    <br/>
+    <img src="https://assets.chucknorris.host/img/avatar/chuck-norris.png" alt="chuck">
+    <blockquote id="output"></blockquote>
+    
+
+
+
+    <script>
+        // NOWDAYS THE JSON FORMAT IS THE RECOMENDED TO USE
+        // Like in this case
+        // Remember, we are only using the GET method
+
+        const displayJoke = document.getElementById('output');
+        const url = 'https://api.chucknorris.io/jokes/random';
+
+        function ajaxFetch() {
+            const xhr = new XMLHttpRequest();
+            
+            xhr.open('GET', url, true);
+            
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    const response = JSON.parse(this.responseText);
+                    displayJoke.textContent = response.value;
+                } else {
+                    console.log('something went wrong... ', this.status);
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
