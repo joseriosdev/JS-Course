@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body style="background-color: #334">
+    <!-- Need to have a canvas element in the DOM -->
+    <canvas width="500" height="500" style="background-color: azure"></canvas>
+
+    <script>
+        // get the canvas
+        var canvas = document.querySelector('canvas');
+        // set the context where the canvas is going to work (2d)
+        // 3D is so complex and that's why exits WebGL, and a library called Three.js for that
+        var ctx = canvas.getContext('2d');
+
+        // depending the context, you have access to some functions
+        // in this case we are going to draw a square
+        // we need the next variables:
+        var color = 'indianred';
+        var x = 10;
+        var y = 20;
+        var width = 100;
+        var height = 150;
+
+        ctx.fillStyle = color;
+        ctx.fillRect(x,y, width,height);
+    </script>
+</body>
+</html>

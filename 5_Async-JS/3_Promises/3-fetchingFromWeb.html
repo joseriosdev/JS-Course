@@ -11,7 +11,7 @@
 <body class="container">
     <h3>Get random joke from Chuck Norris</h3>
     <section>
-        <button onclick="ajaxFetch()" class="btn">Fetch With Promises</button>
+        <button onclick="fetchPromise()" class="btn">Fetch with PROMISES</button>
     </section>
     <br/>
     <img src="https://assets.chucknorris.host/img/avatar/chuck-norris.png" alt="chuck">
@@ -21,24 +21,13 @@
 
 
     <script>
-
         const displayJoke = document.getElementById('output');
         const url = 'https://api.chucknorris.io/jokes/random';
 
-        function ajaxFetch() {
-            const xhr = new XMLHttpRequest();
-            
-            xhr.open('GET', url, true);
-            
-            xhr.onload = function() {
-                if (this.status === 200) {
-                    const response = JSON.parse(this.responseText);
-                    displayJoke.textContent = response.value;
-                } else {
-                    console.log('something went wrong... ', this.status);
-                }
-            }
-            xhr.send();
+        function fetchPromise() {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => displayJoke.textContent = data.value);
         }
     </script>
 </body>

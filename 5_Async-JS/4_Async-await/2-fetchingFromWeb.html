@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body class="container">
+    <h3>Get random joke from Chuck Norris</h3>
+    <section>
+        <button onclick="fetchAsync()" class="btn">Fetch with ASYNC & AWAIT</button>
+    </section>
+    <br/>
+    <img src="https://assets.chucknorris.host/img/avatar/chuck-norris.png" alt="chuck">
+    <blockquote id="output"></blockquote>
+    
+
+
+
+    <script>
+        const displayJoke = document.getElementById('output');
+        const url = 'https://api.chucknorris.io/jokes/random';
+
+        async function fetchAsync() {
+            const result = await fetch(url);
+            const data = await result.json();
+            displayJoke.innerText = data.value;
+        }
+    </script>
+</body>
+</html>

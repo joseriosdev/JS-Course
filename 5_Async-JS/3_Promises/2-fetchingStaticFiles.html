@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Promises</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body class="container">
+	<h3 class="flow-text">Three formats: JSON, XML and TXT</h3>
+	<main class="row">
+		<section class="col s4">
+			<button class="btn" onclick="fetchJson(this)">JSON</button>
+			<ul></ul>
+		</section>
+		<section class="col s4">
+			<button class="btn">XML</button>
+			<ul></ul>
+		</section>
+		<section class="col s4">
+			<button class="btn">TXT</button>
+			<ul></ul>
+		</section>
+	</main>
+
+
+
+
+	<script type="text/javascript">
+		// Static files url
+		const urls = {
+			JSON: '../DataBase/jsonFormat.json',
+			XML: '../DataBase/xmlFormat.xml',
+			TXT: '../DataBase/txtFormat.txt'
+		};
+
+        function fetchJson(elmt) {
+            fetch(urls.JSON)
+                .then(res => res.json())
+                .then(data => {
+                    let res = '';
+                    data.forEach(item => {
+                        res += `
+                            <li><b>Name</b> ${item.name}</li>
+                            <li><b>Type</b> ${item.type}</li>
+                            <li><b>Power</b> ${item.power}</li>
+                            <hr/>
+                        `;
+                    });
+                    elmt.nextElementSibling.innerHTML = res;
+                });
+        }
+	</script>
+</body>
+</html>
