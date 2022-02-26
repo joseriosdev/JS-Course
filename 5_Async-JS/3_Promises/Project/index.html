@@ -2,10 +2,38 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Random images</title>
+	<!-- SKELETON CSS Framework-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css" />
 </head>
-<body>
-	<h1></h1>
+<body class="container">
+	<section id="number-picker">
+		<h3>Pick a number to fetch the amount of dog and fox images</h3>
+		<select name="nums" id="nums" onchange="numberPick(this)">
+			<option default>--</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</section>
+
+	<main style="display: none">
+		<h2>Fetching images</h2>
+		<button onclick="clearAll()">Clear All</button>
+		<section class="row">
+			<div class="six columns">
+				<button class="button-primary" onclick="fetchFoxImg()">Get Random Fox</button>
+				<br/>
+				<div id="fox-gallery"></div>
+			</div>
+			<div class="six columns">
+				<button class="button-primary" onclick="fetchDoggoImg()">Woof Random Dog</button>
+				<br/>
+				<div id="dog-gallery"></div>
+			</div>
+		</section>
+	</main>
+
 	<script type="text/javascript" src="./app.js"></script>
 </body>
 </html>
