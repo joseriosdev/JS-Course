@@ -2,10 +2,43 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Rest Countries</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.4/css/foundation-float.min.css">
 </head>
-<body>
-	<h1></h1>
+<body style="padding:1rem">
+	<h2>Rest Countries</h2>
+
+	<form>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="medium-6 cell">
+					<label>Search By:
+						<select name="search-type">
+							<option value="name">Country Name</option>
+							<option value="capital">Capital City</option>
+							<option value="regionalbloc">Regional Block</option>
+						</select>
+					</label>
+				</div>
+				<div class="medium-6 cell">
+					<label>Search by <span class="code-inline"></span>
+					<input type="text" placeholder="search" required id="search-value">
+					</label>
+				</div>
+				<div class="medium-6 cell">
+					<input type="submit" value="Search" class="button primary">
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<main>
+		<div class="row">
+		</div>
+		
+	</main>
+
+
 	<script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

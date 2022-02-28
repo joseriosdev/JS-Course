@@ -16,13 +16,13 @@ During this decade the explosion of the internet arrived at developed lands, so 
 
 When HTTP was introduced... it also came the REST _(representational state transfer)_ architecture that provides the next verbs:
 
-| HTTP methods | C.R.U.D |
-| ----------: | :---|
-| POST | **C**reate |
-| GET | **R**ead |
-| PUT | **U**pdate / replace |
-| PATCH | **U**pdate / modify |
-| POST | **D**elete |
+| HTTP methods | C.R.U.D              |
+| -----------: | :--------------------|
+|         POST | **C**reate           |
+|          GET | **R**ead             |
+|          PUT | **U**pdate / replace |
+|        PATCH | **U**pdate / modify  |
+|         POST | **D**elete           |
 
 As seen above, REST implements the CRUD principles that are the basic manipulation of data. REST has its own principles, and those are:
 

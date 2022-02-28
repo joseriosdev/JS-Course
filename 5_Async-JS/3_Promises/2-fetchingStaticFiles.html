@@ -15,11 +15,11 @@
 			<ul></ul>
 		</section>
 		<section class="col s4">
-			<button class="btn">XML</button>
+			<button class="btn" onclick="fetchXml(this)">XML</button>
 			<ul></ul>
 		</section>
 		<section class="col s4">
-			<button class="btn">TXT</button>
+			<button class="btn" onclick="fetchTxt(this)">TXT</button>
 			<ul></ul>
 		</section>
 	</main>
@@ -50,6 +50,33 @@
                     });
                     elmt.nextElementSibling.innerHTML = res;
                 });
+        }
+
+        function fetchXml(elmt) {
+            fetch(urls.XML)
+                .then(res => res.text())
+                .then(data => {
+					// we need toparse from string to xml tags
+					const parser = new DOMParser();
+					const xml = parser.parseFromString(data, 'application/xml');
+					const pokemons = Array.from(xml.getElementsByTagName('pokemon'));
+					let uiHTML = '';
+					pokemons.forEach((pokemon, i) => {
+						uiHTML += `
+							<li><b>Name: </b>${xml.getElementsByTagName('name')[i].textContent}</li>
+							<li><b>Type: </b>${xml.getElementsByTagName('type')[i].textContent}</li>
+							<li><b>Power: </b>${xml.getElementsByTagName('power')[i].textContent}</li>
+							<hr/>
+						`;
+					});
+					elmt.nextElementSibling.innerHTML = uiHTML;
+                });
+        }
+
+        function fetchTxt(elmt) {
+            fetch(urls.TXT)
+                .then(res => res.text())
+				.then(data => elmt.nextElementSibling.innerHTML = `<li>${data}</li>`);
         }
 	</script>
 </body>
